@@ -1,15 +1,65 @@
-@import _reset
+//@import _reset
+
+*
+	font-family: 'Roboto', sans-serif
+	margin: 0
+	padding: 0
+
+input[type=number],
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button
+    -webkit-appearance: none
+    -moz-appearance: textfield
+    margin: 0
 
 body
 	display: flex
+	min-height: 100vh
 	justify-content: center
 	align-items: center
-	background-color: #eae7dd
+	background-color: #ADE6E1 //#eae7dd
 
 #app
-	width: 70vw
-	height: 90vh	
+	//width: 70vw
+	margin: 0 auto
 	background-color: white
 	border-radius: 4px
+	box-sizing: border-box
+	padding: 30px
 	box-shadow: 0 0 10px rgba(0,0,0,0.2)
 	overflow: hidden
+
+#character-identity > div
+	margin-right: 40px
+	&:last-child
+		margin-right: 0
+
+#special
+	max-width: 50%
+	position: relative
+	margin-top: 45px
+	left: -32px
+	th
+		font-size: 12px
+		opacity: 0.3
+	td, th
+		width: 90px	
+		overflow: hidden
+		text-align: center
+		padding: 0 5px
+		box-sizing: border-box
+		input
+			color: rgba(0,0,0,0.3) !important
+		b
+			font-size: 20px
+	td:first-child
+		width: 50px
+	.total
+		position: relative
+		bottom: -2px
+	input
+		text-align: center
+
+h1
+	font-weight: 100
+	margin: 20px 0

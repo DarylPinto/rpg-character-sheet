@@ -1,32 +1,29 @@
 import React from 'react';
-import AppBar from 'material-ui/AppBar';
-import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
+import Identity from './identity.jsx';
+import Special from './special.jsx';
 
 class CharacterSheet extends React.Component{
 
 	constructor(props){
 		super(props);
 		this.state = {
-			drawerOpen: false
+			cardTitle: 'Character Sheet'	
 		}
 	}
 
-	toggleDrawer = () => {
-		this.setState({
-			drawerOpen: !this.state.drawerOpen
-		});
+	handleCharacterNameChange = e => {
+		let name = e.target.value;
+		if(name.trim().length === 0) name = "Character Sheet";
+		this.setState({cardTitle: name});
 	}
 
 	render(){
 		return(
-			<div id="character-sheet">
-				<AppBar title="Character Sheet" onLeftIconButtonClick={this.toggleDrawer} />
-				<Drawer open={this.state.drawerOpen} onRequestChange={this.toggleDrawer} docked={false}>
-					<AppBar title="Menu" showMenuIconButton={false} />
-					<MenuItem>Test 1</MenuItem>
-				</Drawer>
-			</div>
+			<main>	
+				<h1>{this.state.cardTitle}</h1>
+				<Identity onCharacterNameChange={this.handleCharacterNameChange} />
+				<Special />
+			</main>
 		)
 	}
 
