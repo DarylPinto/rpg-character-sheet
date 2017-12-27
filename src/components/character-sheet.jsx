@@ -12,8 +12,8 @@ class CharacterSheet extends React.Component{
 	}
 
 	handleCharacterNameChange = e => {
-		let name = e.target.value;
-		if(name.trim().length === 0) name = "Character Sheet";
+		let name = e.target.value.trim();
+		if(name.length === 0) name = "Character Sheet";
 		this.setState({cardTitle: name});
 	}
 
